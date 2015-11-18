@@ -11,12 +11,30 @@ import UIKit
 class SizeViewController: UITableViewController {
     
     var items : [String] = [String]()
+    var pizza = Pizza()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        items.append("chica")
-        items.append("mediano")
-        items.append("grande")
+        items.append("Chica")
+        items.append("Mediana")
+        items.append("Grande")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+
+        if let dimension = self.pizza.dimension {
+            
+            for index in 0..<items.count {
+                if(dimension == items[index]) {
+                    let rowToSelect: NSIndexPath = NSIndexPath(forRow: index, inSection: 0);
+                    self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                }
+            }
+            
+            
+        }
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +65,10 @@ class SizeViewController: UITableViewController {
             let indexPath = self.tableView.indexPathForSelectedRow!
             let dimension = self.items[indexPath.row]
             vc.pizza.dimension = dimension
+            vc.pizza.masa = self.pizza.masa
+            vc.pizza.queso = self.pizza.queso
+            vc.pizza.ingredientes = self.pizza.ingredientes
+            self.pizza = vc.pizza
         }
     }
 

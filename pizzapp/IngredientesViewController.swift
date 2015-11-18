@@ -15,15 +15,33 @@ class IngredientesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items.append("jamón")
-        items.append("pepperoni")
-        items.append("pavo")
-        items.append("salchicha")
-        items.append("aceituna")
-        items.append("cebolla")
-        items.append("pimiento")
-        items.append("piña")
-        items.append("anchoa")
+        items.append("Jamón")
+        items.append("Pepperoni")
+        items.append("Pavo")
+        items.append("Salchicha")
+        items.append("Aceituna")
+        items.append("Cebolla")
+        items.append("Pimiento")
+        items.append("Piña")
+        items.append("Anchoa")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        if let ingredientes = self.pizza.ingredientes {
+            
+            for index in 0..<ingredientes.count {
+                for index2 in 0..<items.count {
+                    if(ingredientes[index] == items[index2]) {
+                        let rowToSelect: NSIndexPath = NSIndexPath(forRow: index2, inSection: 0);
+                        self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                    }
+                }
+            }
+            
+            
+        }
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +82,11 @@ class IngredientesViewController: UITableViewController {
             vc.pizza.queso = self.pizza.queso
             vc.pizza.dimension = self.pizza.dimension
             vc.pizza.masa = self.pizza.masa
+            self.pizza = vc.pizza
+            let prev : QuesoViewController = self.navigationController!.viewControllers[2] as! QuesoViewController
+            prev.pizza.masa = self.pizza.masa
+            prev.pizza.queso = self.pizza.queso
+            prev.pizza.ingredientes = self.pizza.ingredientes
         }
     }
 

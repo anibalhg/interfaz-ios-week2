@@ -15,10 +15,26 @@ class QuesoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items.append("mozarela")
-        items.append("cheddar")
-        items.append("parmesano")
-        items.append("sin queso")
+        items.append("Mozarela")
+        items.append("Cheddar")
+        items.append("Parmesano")
+        items.append("Sin queso")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        if let queso = self.pizza.queso {
+            
+            for index in 0..<items.count {
+                if(queso == items[index]) {
+                    let rowToSelect: NSIndexPath = NSIndexPath(forRow: index, inSection: 0);
+                    self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                }
+            }
+            
+            
+        }
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +67,12 @@ class QuesoViewController: UITableViewController {
             vc.pizza.queso = queso
             vc.pizza.dimension = self.pizza.dimension
             vc.pizza.masa = self.pizza.masa
+            vc.pizza.ingredientes = self.pizza.ingredientes
+            self.pizza = vc.pizza
+            let prev : MasaViewController = self.navigationController!.viewControllers[1] as! MasaViewController
+            prev.pizza.masa = self.pizza.masa
+            prev.pizza.queso = self.pizza.queso
+            prev.pizza.ingredientes = self.pizza.ingredientes
         }
     }
 

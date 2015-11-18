@@ -43,5 +43,26 @@ class ConfirmacionViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func goSize() {
+        let vc = self.navigationController?.viewControllers[0] as! SizeViewController
+        vc.pizza = self.pizza
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    @IBAction func goMasa() {
+        let vc = self.navigationController?.viewControllers[1] as! MasaViewController
+        vc.pizza = self.pizza
+        self.navigationController?.popToViewController(vc as UIViewController, animated: false)
+    }
+    
+    @IBAction func goQueso() {
+        let vc = self.navigationController?.viewControllers[2] as! QuesoViewController
+        vc.pizza = self.pizza
+        self.navigationController?.popToViewController(vc as UIViewController, animated: false)
+    }
+    
+    @IBAction func goIngredientes() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }

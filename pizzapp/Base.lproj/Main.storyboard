@@ -198,50 +198,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamaño" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0N-Y3-Ogi">
-                                <rect key="frame" x="65" y="94" width="471" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamaño:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0N-Y3-Ogi">
+                                <rect key="frame" x="65" y="96" width="471" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwu-1D-88O">
-                                <rect key="frame" x="65" y="123" width="471" height="21"/>
+                                <rect key="frame" x="65" y="196" width="471" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-Sl-Tdk">
-                                <rect key="frame" x="65" y="152" width="471" height="21"/>
+                                <rect key="frame" x="65" y="284" width="471" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-jv-6se">
-                                <rect key="frame" x="65" y="190" width="471" height="21"/>
+                                <rect key="frame" x="65" y="396" width="471" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD6-oq-g8o">
+                                <rect key="frame" x="65" y="125" width="65" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Modificar"/>
+                                <connections>
+                                    <action selector="goSize" destination="Jqg-sW-jJG" eventType="touchDown" id="Z2f-ef-fL0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0n-3U-SIb">
+                                <rect key="frame" x="65" y="225" width="65" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Modificar"/>
+                                <connections>
+                                    <action selector="goMasa" destination="Jqg-sW-jJG" eventType="touchDown" id="ntZ-cM-0h7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWV-rW-bLr">
+                                <rect key="frame" x="65" y="313" width="65" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Modificar"/>
+                                <connections>
+                                    <action selector="goQueso" destination="Jqg-sW-jJG" eventType="touchDown" id="FnV-Fa-5I0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KK6-NI-7rF">
+                                <rect key="frame" x="65" y="447" width="65" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Modificar"/>
+                                <connections>
+                                    <action selector="goIngredientes" destination="Jqg-sW-jJG" eventType="touchDown" id="K1k-3e-MaO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eJD-Sl-Tdk" firstAttribute="leading" secondItem="lwu-1D-88O" secondAttribute="leading" id="IC8-oQ-wXF"/>
-                            <constraint firstItem="cJr-jv-6se" firstAttribute="trailing" secondItem="eJD-Sl-Tdk" secondAttribute="trailing" id="ZeH-Qz-BrW"/>
-                            <constraint firstItem="eJD-Sl-Tdk" firstAttribute="trailing" secondItem="lwu-1D-88O" secondAttribute="trailing" id="ftq-tS-BzF"/>
-                            <constraint firstItem="cJr-jv-6se" firstAttribute="top" secondItem="eJD-Sl-Tdk" secondAttribute="bottom" constant="17" id="i94-YZ-gsi"/>
-                            <constraint firstItem="eJD-Sl-Tdk" firstAttribute="top" secondItem="lwu-1D-88O" secondAttribute="bottom" constant="8" symbolic="YES" id="jbC-zl-3di"/>
-                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="top" secondItem="8yo-Dg-RTL" secondAttribute="bottom" constant="30" id="nZK-TW-vo1"/>
-                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="leading" secondItem="bWI-UZ-3LB" secondAttribute="leadingMargin" constant="45" id="rEI-XA-eoI"/>
-                            <constraint firstItem="cJr-jv-6se" firstAttribute="leading" secondItem="eJD-Sl-Tdk" secondAttribute="leading" id="rgP-cR-Ypj"/>
-                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="centerX" secondItem="bWI-UZ-3LB" secondAttribute="centerX" id="t25-YW-55h"/>
-                            <constraint firstItem="lwu-1D-88O" firstAttribute="trailing" secondItem="a0N-Y3-Ogi" secondAttribute="trailing" id="tJu-xh-CMj"/>
-                            <constraint firstItem="lwu-1D-88O" firstAttribute="leading" secondItem="a0N-Y3-Ogi" secondAttribute="leading" id="wIz-Ma-0Xh"/>
-                            <constraint firstItem="lwu-1D-88O" firstAttribute="top" secondItem="a0N-Y3-Ogi" secondAttribute="bottom" constant="8" symbolic="YES" id="x0W-V2-Qqu"/>
+                            <constraint firstItem="UD6-oq-g8o" firstAttribute="leading" secondItem="lwu-1D-88O" secondAttribute="leading" id="7Bp-sy-q51"/>
+                            <constraint firstItem="rWV-rW-bLr" firstAttribute="top" secondItem="eJD-Sl-Tdk" secondAttribute="bottom" constant="8" symbolic="YES" id="7kd-FN-9fV"/>
+                            <constraint firstItem="UD6-oq-g8o" firstAttribute="leading" secondItem="a0N-Y3-Ogi" secondAttribute="leading" id="8em-zN-oO5"/>
+                            <constraint firstItem="g0n-3U-SIb" firstAttribute="leading" secondItem="lwu-1D-88O" secondAttribute="leading" id="Ax1-Rx-3JT"/>
+                            <constraint firstItem="eJD-Sl-Tdk" firstAttribute="top" secondItem="g0n-3U-SIb" secondAttribute="bottom" constant="29" id="BDq-Ea-hCw"/>
+                            <constraint firstItem="UD6-oq-g8o" firstAttribute="top" secondItem="a0N-Y3-Ogi" secondAttribute="bottom" constant="8" symbolic="YES" id="DY8-HR-RUe"/>
+                            <constraint firstItem="cJr-jv-6se" firstAttribute="trailing" secondItem="eJD-Sl-Tdk" secondAttribute="trailing" id="FQ0-nY-YOj"/>
+                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="trailing" secondItem="lwu-1D-88O" secondAttribute="trailing" id="JGA-80-xdV"/>
+                            <constraint firstItem="cJr-jv-6se" firstAttribute="centerX" secondItem="bWI-UZ-3LB" secondAttribute="centerX" id="K61-0U-3cH"/>
+                            <constraint firstItem="lwu-1D-88O" firstAttribute="top" secondItem="UD6-oq-g8o" secondAttribute="bottom" constant="41" id="Lz7-Rk-sy7"/>
+                            <constraint firstItem="cJr-jv-6se" firstAttribute="top" secondItem="rWV-rW-bLr" secondAttribute="bottom" constant="53" id="PK9-wt-XOe"/>
+                            <constraint firstItem="KK6-NI-7rF" firstAttribute="leading" secondItem="cJr-jv-6se" secondAttribute="leading" id="adg-Sj-IAJ"/>
+                            <constraint firstItem="g0n-3U-SIb" firstAttribute="top" secondItem="lwu-1D-88O" secondAttribute="bottom" constant="8" symbolic="YES" id="bMa-aJ-aph"/>
+                            <constraint firstItem="cJr-jv-6se" firstAttribute="leading" secondItem="rWV-rW-bLr" secondAttribute="leading" id="cHv-KA-5Mr"/>
+                            <constraint firstItem="KK6-NI-7rF" firstAttribute="top" secondItem="cJr-jv-6se" secondAttribute="bottom" constant="30" id="dbu-ef-5yt"/>
+                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="leading" secondItem="bWI-UZ-3LB" secondAttribute="leadingMargin" constant="45" id="gRd-y3-vtM"/>
+                            <constraint firstItem="eJD-Sl-Tdk" firstAttribute="leading" secondItem="rWV-rW-bLr" secondAttribute="leading" id="jit-IJ-nsv"/>
+                            <constraint firstItem="lwu-1D-88O" firstAttribute="trailing" secondItem="eJD-Sl-Tdk" secondAttribute="trailing" id="pJ8-bi-a7x"/>
+                            <constraint firstItem="a0N-Y3-Ogi" firstAttribute="top" secondItem="8yo-Dg-RTL" secondAttribute="bottom" constant="32" id="qmV-Gi-Kjn"/>
+                            <constraint firstItem="g0n-3U-SIb" firstAttribute="leading" secondItem="eJD-Sl-Tdk" secondAttribute="leading" id="uIb-QC-00Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Confirmación" id="OSG-xi-8LR">

@@ -15,9 +15,25 @@ class MasaViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items.append("delgada")
-        items.append("crujiente")
-        items.append("gruesa")
+        items.append("Delgada")
+        items.append("Crujiente")
+        items.append("Gruesa")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        if let masa = self.pizza.masa {
+            
+            for index in 0..<items.count {
+                if(masa == items[index]) {
+                    let rowToSelect: NSIndexPath = NSIndexPath(forRow: index, inSection: 0);
+                    self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+                }
+            }
+            
+            
+        }
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,11 +60,19 @@ class MasaViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "show" {
+            
             let vc = segue.destinationViewController as! QuesoViewController
             let indexPath = self.tableView.indexPathForSelectedRow!
             let masa = self.items[indexPath.row]
             vc.pizza.masa = masa
             vc.pizza.dimension = self.pizza.dimension
+            vc.pizza.queso = self.pizza.queso
+            vc.pizza.ingredientes = self.pizza.ingredientes
+            self.pizza = vc.pizza
+            let prev : SizeViewController = self.navigationController!.viewControllers[0] as! SizeViewController
+            prev.pizza.masa = self.pizza.masa
+            prev.pizza.queso = self.pizza.queso
+            prev.pizza.ingredientes = self.pizza.ingredientes
         }
     }
     
